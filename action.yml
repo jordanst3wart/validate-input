@@ -1,0 +1,14 @@
+name: Validate input
+description: Fails if the input contains anything other than letters, digits and spaces.
+inputs:
+  value:
+    description: The string to validate
+    required: true
+runs:
+  using: composite
+  steps:
+    # The input is passed via env (never ${{ }} inside run) so the check itself can't be injected.
+    - run: '"$GITHUB_ACTION_PATH/validate.sh" "$VALUE"'
+      shell: bash
+      env:
+        VALUE: ${{ inputs.value }}

