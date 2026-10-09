@@ -13,7 +13,7 @@ What is not safe:
 - run: echo "Hello ${{ input.name }}"
 ```
 
-This is the recommended approach:
+This is the recommended approach (the environment export turns everything into a string, the quotes are still needed):
 ```yaml
 
 - run: echo "Hello $NAME"
