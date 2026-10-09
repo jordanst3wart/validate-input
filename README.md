@@ -34,6 +34,10 @@ This action provides an alternative approach:
 - run: echo "Hello ${{ input.name }}"
 ```
 
+# Future API
+
+If I find myself using this action, or if other people like this action, I would like to valid the input to more strict data types, such as branch names, sem versions, alphanumeric characters, and other common string inputs.  
+
 # More information
 
 https://github.blog/security/supply-chain-security/four-tips-to-keep-your-github-actions-workflows-secure/
