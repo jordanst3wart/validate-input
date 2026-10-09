@@ -38,7 +38,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # errors if name is not alphanumeric
-      - uses: jordanst3wart/validate-input@173efa2db92da9c23f49d84035f0d5b757811f82
+      - uses: jordanst3wart/validate-input@7abeaf955fc6fc6cd467f638768df59fa5d80d2d
         with:
           value: ${{ inputs.name }}
       # safe to call with run commands, shell commands can normally be injected here
