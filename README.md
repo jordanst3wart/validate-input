@@ -1,4 +1,4 @@
-# validate-inputs-action
+# validate-inputs
 
 
 > [!CAUTION]
@@ -23,7 +23,7 @@ jobs:
       - run: echo "Hello ${{ input.name }}"
 ```
 
-Errors on invalid inputs to github actions.
+What is safe:
 
 ```yaml
 on:
@@ -38,7 +38,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # errors if name is not alphanumeric
-      - uses: jordanst3wart/validate-inputs-action@173efa2db92da9c23f49d84035f0d5b757811f82
+      - uses: jordanst3wart/validate-input@173efa2db92da9c23f49d84035f0d5b757811f82
         with:
           value: ${{ inputs.name }}
       # safe to call with run commands, shell commands can normally be injected here
