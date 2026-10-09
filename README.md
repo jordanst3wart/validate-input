@@ -38,6 +38,15 @@ This action provides an alternative approach:
 
 If I find myself using this action, or if other people like this action, I would like to valid the input to more strict data types, such as branch names, sem versions, alphanumeric characters, and other common string inputs.  
 
+The future API might look something like:
+```yaml
+- uses: jordanst3wart/validate-input@7abeaf955fc6fc6cd467f638768df59fa5d80d2d
+  with:
+    value: ${{ inputs.branch }}
+    branch-name: true
+# errors in not a valid branch name, or has dangerous shell characters
+```
+
 # More information
 
 https://github.blog/security/supply-chain-security/four-tips-to-keep-your-github-actions-workflows-secure/
